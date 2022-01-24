@@ -1,10 +1,12 @@
-package com.pt.exercicio.entity;
+package com.pt.exercicio.client.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 
 @Data
-public class Endereco {
+@Builder
+public class EnderecoClientDto {
 
     private String cep;
     private String logradouro;
