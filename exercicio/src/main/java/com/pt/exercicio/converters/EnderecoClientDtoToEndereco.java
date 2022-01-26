@@ -5,6 +5,9 @@ import com.pt.exercicio.dto.Endereco;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class EnderecoClientDtoToEndereco implements Converter <EnderecoClientDto, Endereco> {
 
@@ -22,5 +25,9 @@ public class EnderecoClientDtoToEndereco implements Converter <EnderecoClientDto
                 .siafi(source.getSiafi())
                 .uf(source.getUf())
                 .build();
+    }
+    public List<Endereco> convertListEndereco(List<EnderecoClientDto> source) {
+        return source.stream().map(e -> convert(e)).collect(Collectors.toList());
+
     }
 }

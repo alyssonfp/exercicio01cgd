@@ -2,11 +2,12 @@ package com.pt.exercicio.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 
 @Data
 @Builder
-public class Endereco {
+public class Endereco extends RepresentationModel<Endereco> {
 
     private String cep;
     private String logradouro;
